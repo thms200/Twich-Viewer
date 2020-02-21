@@ -1,0 +1,149 @@
+* {
+  font-family: 'Dosis', 'Gamja Flower', cursive;
+}
+
+.appContainer {
+  position: 'relative'
+}
+
+/* [common]*/
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 0px;
+  overflow: scroll;
+  list-style: none;
+}
+
+.moveButton:hover, .gameImage:hover, .videoImage:hover, .title:hover, .closeButton:hover {
+  cursor: pointer;
+}
+
+/* [header] */
+.title {
+  margin: 5px;
+}
+
+/* [game/video] */
+.moveButton {
+  width: 50px;
+  height: 50px;
+  padding: 0 15px;
+  border-style: none;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px
+}
+
+.moveButton:hover {
+  border-radius: 50%;
+  background-color: #F8F9FA;
+}
+
+.moveButton:focus, .closeButton:focus {
+  outline-style: none;
+}
+
+.videosBox {
+  justify-content: space-between;
+}
+
+.videoWrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 0;
+  overflow: scroll;
+  list-style: none;
+}
+
+.contentsWrapper {
+  margin: 3px;
+}
+
+.gameName {
+  text-align: center;
+}
+
+.gameImage {
+  width: 140px;
+  height: 200px;
+}
+
+.videoImage {
+  width: 250px;
+  height: 140px;
+}
+
+.gameImage img, .videoImage img {
+  border-radius: 15px;
+}
+
+.videoName, .videoUser {
+  display: flex;
+  align-items: center;
+  padding: 1px 5px; 
+}
+
+.videoInformation {
+  padding: 1px 5px;
+  font-size: 13px;
+  color: #C5BFBF;
+}
+
+.nonVisible {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  font-size: 32px;
+  background-color: #E2DEDECC;
+}
+
+.modalWrapper {
+  display: flex;
+  z-index: 1;
+  background-color: #d6cbd3;
+}
+
+.modalInfoWrapper {
+  padding: 0px;
+  list-style: none;
+}
+
+.modalVideoWrapper {
+  margin: auto 15px;
+}
+
+iframe {
+  margin: 5px auto;
+}
+
+.modalInfoWrapper li, .closeButton {
+  width: 500px;
+  margin: 10px;
+  color: white;
+}
+
+.closeButton {
+  width: 50px;
+  height: 50px;
+  margin: 3px;
+  border-style: none;
+  color: white;
+  background: transparent;
+}
+
+.closeButton:hover {
+  border-radius: 50%;
+  background-color: #c6bac3;
+}

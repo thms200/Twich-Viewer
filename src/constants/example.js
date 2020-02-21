@@ -1,0 +1,141 @@
+export const fetchedGames = [
+  {
+    id: '21779',
+    name: 'agb',
+    box_art_url: 'https://www.www.www',
+  },
+  {
+    id: '217723',
+    name: 'cldkek',
+    box_art_url: 'https://www.www.slslw',
+  },
+  {
+    id: '22223',
+    name: 'cldke333k',
+    box_art_url: 'https://www.www.s2222slw',
+  },
+];
+
+export const byIdSortedGames = {
+  217723: {
+    id: '217723',
+    name: 'cldkek',
+    box_art_url: 'https://www.www.slslw',
+  },
+  21779: {
+    id: '21779',
+    name: 'agb',
+    box_art_url: 'https://www.www.www',
+  },
+  22223: {
+    id: '22223',
+    name: 'cldke333k',
+    box_art_url: 'https://www.www.s2222slw',
+  },
+};
+
+export const allIdsSortedGames = ['21779', '217723', '22223'];
+
+export const fetchedVideos = [
+  {
+    id: '223245',
+    user_id: '123455',
+    user_name: 'teklkrek',
+    title: 'KEjektjakerj',
+    description: '',
+    created_at: '2019-06-05T23:12:06Z',
+    published_at: '2018-04-03T23:28:06Z',
+    url: 'https://www.tlkejr.tv.ekekw',
+    thumbnail_url: 'https://ste.sekr/erkjkse',
+    viewable: 'public',
+    view_count: 2345,
+    language: 'en',
+    type: 'highlight',
+    duration: '7h25m17s',
+  },
+  {
+    id: '2232123',
+    user_id: '12232355',
+    user_name: 'dkdeklkrek',
+    title: 'KEaekajerkktjakerj',
+    description: '',
+    created_at: '2020-06-05T23:12:06Z',
+    published_at: '2020-04-03T23:28:06Z',
+    url: 'https://www.ezzkejr.tv.ekekw',
+    thumbnail_url: 'https://stezzz.sekr/erkjkse',
+    viewable: 'public',
+    view_count: 15,
+    language: 'en',
+    type: 'highlight',
+    duration: '17s',
+  },
+  {
+    id: '394858',
+    user_id: '19394355',
+    user_name: 'dkd2ccssrek',
+    title: 'aekjrkjerkktjakerj',
+    description: '',
+    created_at: '2018-06-05T23:12:06Z',
+    published_at: '2000-04-03T23:28:06Z',
+    url: 'https://www.ezaeralkejrzkejr.tv.ekekw',
+    thumbnail_url: 'https://stezzz.a.elkrsekr/erkjkse',
+    viewable: 'public',
+    view_count: 11111,
+    language: 'en',
+    type: 'highlight',
+    duration: '11s',
+  },
+];
+
+export const byIdSortedVideos = {
+  223245: {
+    id: '223245',
+    user_id: '123455',
+    user_name: 'teklkrek',
+    title: 'KEjektjakerj',
+    description: '',
+    created_at: '2019-06-05T23:12:06Z',
+    published_at: '2018-04-03T23:28:06Z',
+    url: 'https://www.tlkejr.tv.ekekw',
+    thumbnail_url: 'https://ste.sekr/erkjkse',
+    viewable: 'public',
+    view_count: 2345,
+    language: 'en',
+    type: 'highlight',
+    duration: '7h25m17s',
+  },
+  2232123: {
+    id: '2232123',
+    user_id: '12232355',
+    user_name: 'dkdeklkrek',
+    title: 'KEaekajerkktjakerj',
+    description: '',
+    created_at: '2020-06-05T23:12:06Z',
+    published_at: '2020-04-03T23:28:06Z',
+    url: 'https://www.ezzkejr.tv.ekekw',
+    thumbnail_url: 'https://stezzz.sekr/erkjkse',
+    viewable: 'public',
+    view_count: 15,
+    language: 'en',
+    type: 'highlight',
+    duration: '17s',
+  },
+  394858: {
+    id: '394858',
+    user_id: '19394355',
+    user_name: 'dkd2ccssrek',
+    title: 'aekjrkjerkktjakerj',
+    description: '',
+    created_at: '2018-06-05T23:12:06Z',
+    published_at: '2000-04-03T23:28:06Z',
+    url: 'https://www.ezaeralkejrzkejr.tv.ekekw',
+    thumbnail_url: 'https://stezzz.a.elkrsekr/erkjkse',
+    viewable: 'public',
+    view_count: 11111,
+    language: 'en',
+    type: 'highlight',
+    duration: '11s',
+  },
+};
+
+export const allIdsSortedVideos = ['223245', '2232123', '394858'];
