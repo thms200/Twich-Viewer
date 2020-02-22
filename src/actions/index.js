@@ -6,6 +6,7 @@ import {
   fetchNextVideos,
   fetchPreviousVideos
 } from '../utils/api';
+import { ERROR_MESSAGE } from '../constants/url';
 
 export function getGames(games, gamesPagination, selectedGame) {
   return {
@@ -24,6 +25,16 @@ export function getVideos(videos, videosPagination) {
   };
 }
 
+function dispatchVideo(dispatch, fectchVideos, errorMessage){
+  if (fectchVideos && fectchVideos.data.data.length > 0) {
+    const videos = fectchVideos.data.data;
+    const videosPagination = fectchVideos.data.pagination.cursor;
+    dispatch(getVideos(videos, videosPagination));
+  } else if (errorMessage) {
+    alert(errorMessage);
+  }
+}
+
 export function loadNextGames() {
   return function(dispatch, getState) {
     const pagination = getState().games.pagination;
@@ -36,12 +47,8 @@ export function loadNextGames() {
 
           fetchVideos(selectedGame)
             .then((videoList) => {
-              if(videoList) {
-                const videos = videoList.data.data;
-                const videosPagination = videoList.data.pagination.cursor;
-                dispatch(getGames(games, gamesPagination, selectedGame));
-                dispatch(getVideos(videos, videosPagination));
-              }
+              dispatch(getGames(games, gamesPagination, selectedGame));
+              dispatchVideo(dispatch, videoList, ERROR_MESSAGE.ALERT.CHOICE_ZEROVIDEO);
             });
         }
       });
@@ -60,12 +67,8 @@ export function loadPreviousGames() {
             
           fetchVideos(selectedGame)
             .then((videoList) => {
-              if(videoList) {
-                const videos = videoList.data.data;
-                const videosPagination = videoList.data.pagination.cursor;
-                dispatch(getGames(games, gamesPagination, selectedGame));
-                dispatch(getVideos(videos, videosPagination));
-              }
+              dispatch(getGames(games, gamesPagination, selectedGame));
+              dispatchVideo(dispatch, videoList, ERROR_MESSAGE.ALERT.CHOICE_ZEROVIDEO);
             });
         }
       });
@@ -78,11 +81,7 @@ export function loadNextVideos() {
     const selectedGame = getState().games.selectedGame;
     fetchNextVideos(selectedGame, pagination)
       .then((videoList) => {
-        if(videoList) {
-          const videos = videoList.data.data;
-          const videosPagination = videoList.data.pagination.cursor;
-          dispatch(getVideos(videos, videosPagination));
-        }
+        dispatchVideo(dispatch, videoList, ERROR_MESSAGE.ALERT.LESS_DATA);
       });
   };
 }
@@ -93,11 +92,7 @@ export function loadPreviousVideos() {
     const selectedGame = getState().games.selectedGame;
     fetchPreviousVideos(selectedGame, pagination)
       .then((videoList) => {
-        if(videoList) {
-          const videos = videoList.data.data;
-          const videosPagination = videoList.data.pagination.cursor;
-          dispatch(getVideos(videos, videosPagination));
-        }
+        dispatchVideo(dispatch, videoList);
       });
   };
 }
@@ -107,11 +102,7 @@ export function loadSelectedGame(selectedGame) {
     dispatch(changeSelectedGame(selectedGame));
     fetchVideos(selectedGame)
       .then((videoList) => {
-        if(videoList) {
-          const videos = videoList.data.data;
-          const videosPagination = videoList.data.pagination.cursor;
-          dispatch(getVideos(videos, videosPagination));
-        }
+        dispatchVideo(dispatch, videoList, ERROR_MESSAGE.ALERT.CHOICE_ZEROVIDEO);
       });
   };
 }

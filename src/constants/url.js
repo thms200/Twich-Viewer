@@ -15,6 +15,13 @@ export const URL_OPTION = {
 };
 
 export const ERROR_MESSAGE = {
-  RECEIVED: 'Request failed with status code 429',
-  ALERT: 'You have made too many requests. Please try again later.',
+  RECEIVED: {
+    MANY_REQUEST: 'Request failed with status code 429',
+    LESS_DATA: 'Request failed with status code 400',
+  },
+  ALERT: {
+    MANY_REQUEST: 'You have made too many requests. Please try again later.',
+    LESS_DATA: 'Sorry, no more video',
+    CHOICE_ZEROVIDEO: 'Sorry. The game you choose has no video. Choice another Game :)',
+  },
 };
