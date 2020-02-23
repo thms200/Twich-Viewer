@@ -25,6 +25,13 @@ export function getVideos(videos, videosPagination) {
   };
 }
 
+export function loading(loading) {
+  return {
+    type: types.LOADING,
+    loading,
+  }
+}
+
 function dispatchVideo(dispatch, fectchVideos, errorMessage){
   if (fectchVideos && fectchVideos.data.data.length > 0) {
     const videos = fectchVideos.data.data;

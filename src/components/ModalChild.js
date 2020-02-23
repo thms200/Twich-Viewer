@@ -15,7 +15,7 @@ import {
 
 export default function ModalChild({ modalInfo, onCloseModal }) {
   const buttonInput = <IconClose size={20} />;
-  const hasVideo = !!modalInfo.id
+  const hasVideo = !!modalInfo.id;
   const video 
     = <iframe
         title={modalInfo.modalVideo}
@@ -43,8 +43,8 @@ export default function ModalChild({ modalInfo, onCloseModal }) {
         <li><IconViewable size={20} />&ensp;Viewable: {modalInfo.viewable}</li>
       </ul>
       <Button
-        onButtonClicked={onCloseModal}
-        buttonInput={buttonInput}
+        onButtonClick={onCloseModal}
+        buttonText={buttonInput}
         buttonStyle={styles.closeButton}
       />
     </div>

@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Button({ onButtonClicked, buttonInput, buttonStyle }) {
+export default function Button({ onButtonClick, buttonText, buttonStyle }) {
   return (
     <button 
       className={buttonStyle}
-      onClick={onButtonClicked}
+      onClick={onButtonClick}
     >
-      {buttonInput}
+      {buttonText}
     </button>
   );
 }
 
 Button.propTypes = {
-  onButtonClicked: PropTypes.func.isRequired,
-  buttonInput: PropTypes.oneOfType([
+  onButtonClick: PropTypes.func.isRequired,
+  buttonText: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object,
   ]),

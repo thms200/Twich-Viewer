@@ -5,7 +5,7 @@ import Grid from '../components/Grid';
 import Button from '../components/Button';
 import styles from './AppContainer.module.css';
 import { loadPreviousGames, loadNextGames, loadSelectedGame } from '../actions';
-import { resortByIdOrder } from '../utils/api';
+import { resortByIdOrder } from '../utils/util';
 import { GAME_CELL } from '../constants/gridCell';
 
 function GameContainer({ gamesByid, gamesAllIds, onPreviousClick, onNextClick, onGameClick }) {
@@ -18,18 +18,18 @@ function GameContainer({ gamesByid, gamesAllIds, onPreviousClick, onNextClick, o
   return (
     <article className={styles.wrapper}>
       <Button
-        onButtonClicked={onPreviousClick}
-        buttonInput={'<'}
+        onButtonClick={onPreviousClick}
+        buttonText={'<'}
         buttonStyle={styles.moveButton}
       />
       <Grid
-        areaInfo={gameList}
+        areaInfoList={gameList}
         cellInfo={GAME_CELL}
         onCellClick={onGameClick}
       />
       <Button 
-        onButtonClicked={onNextClick}
-        buttonInput={'>'}
+        onButtonClick={onNextClick}
+        buttonText={'>'}
         buttonStyle={styles.moveButton}
       />
     </article>

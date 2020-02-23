@@ -1,17 +1,6 @@
-import { resortByIdOrder, fetchGames, fetchVideos } from './api';
-import { 
-  byIdSortedGames, 
-  allIdsSortedGames, 
-  fetchedGames as gamesResult 
-} from '../constants/example';
+import { fetchGames, fetchVideos } from './api';
 
 describe('<api>', () => {
-  describe('<function resortByIdOrder>', () => {
-    it('should be resorted by id in the form of an array.', () => {
-      expect(resortByIdOrder(byIdSortedGames, allIdsSortedGames)).toEqual(gamesResult);
-    });
-  });
-
   describe('<function fetchGames/fetchVideos>', () => {
     it('should fetch game data', async () => {
       const data = await fetchGames();

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Grid from './Grid';
 
-export const GAME_CELL = {
+const GAME_CELL = {
   IMAGE_TYPE: 'box_art_url',
   IMAGE_SPLIT: '{',
   IMAGE_SIZE: '140x200.',
@@ -24,7 +24,7 @@ const fetchedGames = [
 describe('<Grid />', () => {
   const grid = shallow(
     <Grid
-      areaInfo={fetchedGames}
+      areaInfoList={fetchedGames}
       cellInfo={GAME_CELL}
       onCellClick={() => {}}
     >
@@ -33,7 +33,7 @@ describe('<Grid />', () => {
     </Grid>
   );
 
-  it('should cut game name size if name leangth is than bigger 15', () => {
+  it('should cut name size if name length is bigger than limit', () => {
     expect(grid.find('div.gameName').text()).toBe('agbdfeafaeajrle..');
   });
 

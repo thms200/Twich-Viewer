@@ -7,7 +7,7 @@ import ModalChild from '../components/ModalChild';
 import Button from '../components/Button';
 import styles from './AppContainer.module.css';
 import { loadPreviousVideos, loadNextVideos } from '../actions';
-import { resortByIdOrder } from '../utils/api';
+import { resortByIdOrder } from '../utils/util';
 import { VIDEO_CELL } from '../constants/gridCell';
 
 function VideoContainer({ videosByid, videosAllIds, onPreviousClick, onNextClick }) {
@@ -45,18 +45,18 @@ function VideoContainer({ videosByid, videosAllIds, onPreviousClick, onNextClick
         <ModalChild modalInfo={selectedVideo} onCloseModal={onVideoCloseClick} />
       </Modal>
       <Button 
-        onButtonClicked={onPreviousClick}
-        buttonInput={'<'}
+        onButtonClick={onPreviousClick}
+        buttonText={'<'}
         buttonStyle={styles.moveButton}
       />
       <Grid
-        areaInfo={videoList}
+        areaInfoList={videoList}
         cellInfo={VIDEO_CELL}
         onCellClick={onVideoClick}
       />
       <Button
-        onButtonClicked={onNextClick}
-        buttonInput={'>'}
+        onButtonClick={onNextClick}
+        buttonText={'>'}
         buttonStyle={styles.moveButton}
       />
     </article>

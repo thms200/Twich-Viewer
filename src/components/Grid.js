@@ -4,7 +4,7 @@ import GridCell from './GridCell';
 import styles from '../containers/AppContainer.module.css';
 import { IconTitle, IconTwich } from '../constants/icon';
 
-export default function Grid({ areaInfo, cellInfo, onCellClick }) {
+export default function Grid({ areaInfoList, cellInfo, onCellClick }) {
   const {
     IMAGE_TYPE,
     IMAGE_SPLIT,
@@ -19,7 +19,7 @@ export default function Grid({ areaInfo, cellInfo, onCellClick }) {
 
   return (
     <ul className={GRID_STYLE}>
-      {areaInfo.length && areaInfo.map((gridCell) => {
+      {areaInfoList.map((gridCell) => {
         const imageUrl = gridCell[IMAGE_TYPE].split(IMAGE_SPLIT);
         const imageExtention = imageUrl[2].split('.')[1];
         const imageSrc = `${imageUrl[0]}${IMAGE_SIZE}${imageExtention}`;
@@ -72,7 +72,7 @@ export default function Grid({ areaInfo, cellInfo, onCellClick }) {
 }
 
 Grid.propTypes = {
-  areaInfo: PropTypes.array.isRequired,
+  areaInfoList: PropTypes.array.isRequired,
   cellInfo: PropTypes.object.isRequired,
   onCellClick: PropTypes.func.isRequired,
 };

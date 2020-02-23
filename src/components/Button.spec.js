@@ -6,13 +6,14 @@ describe('<Button />', () => {
   const onHandleClick = jest.fn();
   const button = shallow(
     <Button 
-      onButtonClicked={onHandleClick}
-      buttonInput='>'
+      onButtonClick={onHandleClick}
+      buttonText='>'
       buttonStyle='styles.moveButton'
     />
   );
 
   it('should call onButtonClicked when button is clicked', () => {
+    expect(onHandleClick.mock.calls.length).toBe(0);
     button.simulate('click');
     expect(onHandleClick.mock.calls.length).toBe(1);
   });
